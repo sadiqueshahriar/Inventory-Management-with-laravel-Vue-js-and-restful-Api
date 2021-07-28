@@ -1982,7 +1982,7 @@ __webpack_require__.r(__webpack_exports__);
     login: function login() {
       var _this = this;
 
-      axios.post('api/auth/login', this.form).then(function (res) {
+      axios.post('https://inventorymanagements.herokuapp.com/api/auth/login', this.form).then(function (res) {
         User.responseAfterLogin(res);
         Toast.fire({
           icon: 'success',
@@ -2159,7 +2159,7 @@ __webpack_require__.r(__webpack_exports__);
     signup: function signup() {
       var _this = this;
 
-      axios.post('api/auth/signup', this.form).then(function (res) {
+      axios.post('https://inventorymanagements.herokuapp.com/api/auth/signup', this.form).then(function (res) {
         User.responseAfterLogin(res);
         Toast.fire({
           icon: 'success',
@@ -2251,7 +2251,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var _this = this;
 
-      axios.post('/api/category', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/category', this.form).then(function () {
         _this.$router.push({
           name: 'category'
         });
@@ -2343,7 +2343,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/category/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/category/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -2352,7 +2352,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this2 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/category/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/category/' + id, this.form).then(function () {
       _this2.$router.push({
         name: 'category'
       });
@@ -2456,7 +2456,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allCategory: function allCategory() {
       var _this2 = this;
 
-      axios.get('/api/category').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/category').then(function (_ref) {
         var data = _ref.data;
         return _this2.categories = data;
       })["catch"]();
@@ -2474,7 +2474,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/category/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/category/' + id).then(function () {
             _this3.categories = _this3.categories.filter(function (category) {
               return category.id != id;
             });
@@ -2612,7 +2612,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var _this2 = this;
 
-      axios.post('/api/customer', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/customer', this.form).then(function () {
         _this2.$router.push({
           name: 'customer'
         });
@@ -2729,7 +2729,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/customer/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/customer/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -2756,7 +2756,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this3 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/customer/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/customer/' + id, this.form).then(function () {
       _this3.$router.push({
         name: 'customer'
       });
@@ -2867,7 +2867,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allCustomer: function allCustomer() {
       var _this2 = this;
 
-      axios.get('/api/customer').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/customer').then(function (_ref) {
         var data = _ref.data;
         return _this2.customers = data;
       })["catch"]();
@@ -2885,7 +2885,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/customer/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/customer/' + id).then(function () {
             _this3.customers = _this3.customers.filter(function (customer) {
               return customer.id != id;
             });
@@ -3039,7 +3039,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var _this2 = this;
 
-      axios.post('/api/employee', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/employee', this.form).then(function () {
         _this2.$router.push({
           name: 'employee'
         });
@@ -3175,7 +3175,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/employee/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/employee/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -3202,7 +3202,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this3 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/employee/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/employee/' + id, this.form).then(function () {
       _this3.$router.push({
         name: 'employee'
       });
@@ -3313,7 +3313,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allEmployee: function allEmployee() {
       var _this2 = this;
 
-      axios.get('/api/employee').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/employee').then(function (_ref) {
         var data = _ref.data;
         return _this2.employees = data;
       })["catch"]();
@@ -3331,7 +3331,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/employee/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/employee/' + id).then(function () {
             _this3.employees = _this3.employees.filter(function (employee) {
               return employee.id != id;
             });
@@ -3428,7 +3428,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var _this = this;
 
-      axios.post('/api/expense', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/expense', this.form).then(function () {
         _this.$router.push({
           name: 'expense'
         });
@@ -3524,7 +3524,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/expense/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/expense/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -3533,7 +3533,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this2 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/expense/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/expense/' + id, this.form).then(function () {
       _this2.$router.push({
         name: 'expense'
       });
@@ -3641,7 +3641,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allExpense: function allExpense() {
       var _this2 = this;
 
-      axios.get('/api/expense').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/expense').then(function (_ref) {
         var data = _ref.data;
         return _this2.expenses = data;
       })["catch"]();
@@ -3659,7 +3659,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/expense/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/expense/' + id).then(function () {
             _this3.expenses = _this3.expenses.filter(function (expense) {
               return expense.id != id;
             });
@@ -3823,7 +3823,7 @@ __webpack_require__.r(__webpack_exports__);
     todaySell: function todaySell() {
       var _this = this;
 
-      axios.get('/api/today/sell/').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/today/sell/').then(function (_ref) {
         var data = _ref.data;
         return _this.todaysell = data;
       })["catch"](function (error) {
@@ -3833,7 +3833,7 @@ __webpack_require__.r(__webpack_exports__);
     todayincome: function todayincome() {
       var _this2 = this;
 
-      axios.get('/api/today/income/').then(function (_ref2) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/today/income/').then(function (_ref2) {
         var data = _ref2.data;
         return _this2.income = data;
       })["catch"](function (error) {
@@ -3843,7 +3843,7 @@ __webpack_require__.r(__webpack_exports__);
     todaydue: function todaydue() {
       var _this3 = this;
 
-      axios.get('/api/today/due/').then(function (_ref3) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/today/due/').then(function (_ref3) {
         var data = _ref3.data;
         return _this3.due = data;
       })["catch"](function (error) {
@@ -3853,7 +3853,7 @@ __webpack_require__.r(__webpack_exports__);
     todayexpense: function todayexpense() {
       var _this4 = this;
 
-      axios.get('/api/today/expense/').then(function (_ref4) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/today/expense/').then(function (_ref4) {
         var data = _ref4.data;
         return _this4.expense = data;
       })["catch"](function (error) {
@@ -3863,7 +3863,7 @@ __webpack_require__.r(__webpack_exports__);
     stockOut: function stockOut() {
       var _this5 = this;
 
-      axios.get('/api/today/stockout/').then(function (_ref5) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/today/stockout/').then(function (_ref5) {
         var data = _ref5.data;
         return _this5.products = data;
       })["catch"](function (error) {
@@ -3962,7 +3962,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allOrder: function allOrder() {
       var _this2 = this;
 
-      axios.get('/api/orders').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/orders').then(function (_ref) {
         var data = _ref.data;
         return _this2.orders = data;
       })["catch"]();
@@ -4076,7 +4076,7 @@ __webpack_require__.r(__webpack_exports__);
       var data = {
         date: this.date
       };
-      axios.post('/api/search/order/', data).then(function (_ref) {
+      axios.post('https://inventorymanagements.herokuapp.com/api/search/order/', data).then(function (_ref) {
         var data = _ref.data;
         return _this.orders = data;
       })["catch"](function (error) {
@@ -4215,11 +4215,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/order/details/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/order/details/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.orders = data;
   })["catch"](console.log('error'));
-  axios.get('/api/order/orderdetails/' + id).then(function (_ref2) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/order/orderdetails/' + id).then(function (_ref2) {
     var data = _ref2.data;
     return _this.details = data;
   })["catch"](console.log('error'));
@@ -4482,7 +4482,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   AddToCart: function AddToCart(id) {
     var _this4 = this;
 
-    axios.get('/api/addToCart/' + id).then(function () {
+    axios.get('https://inventorymanagements.herokuapp.com/api/addToCart/' + id).then(function () {
       Reload.$emit('AfterAdd');
       Notification.cart_success();
     })["catch"](function (error) {
@@ -4492,7 +4492,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   cartproduct: function cartproduct() {
     var _this5 = this;
 
-    axios.get('/api/cart/product/').then(function (_ref) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/cart/product/').then(function (_ref) {
       var data = _ref.data;
       return _this5.carts = data;
     })["catch"](function (error) {
@@ -4502,7 +4502,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   removeItems: function removeItems(id) {
     var _this6 = this;
 
-    axios.get('/api/remove/cart/' + id).then(function () {
+    axios.get('https://inventorymanagements.herokuapp.com/api/remove/cart/' + id).then(function () {
       Reload.$emit('AfterAdd');
       Notification.cart_delete();
     })["catch"](function (error) {
@@ -4512,7 +4512,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   increment: function increment(id) {
     var _this7 = this;
 
-    axios.get('/api/increment/' + id).then(function () {
+    axios.get('https://inventorymanagements.herokuapp.com/api/increment/' + id).then(function () {
       Reload.$emit('AfterAdd');
     })["catch"](function (error) {
       return _this7.errors = error.response.data.errors;
@@ -4521,7 +4521,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   decrement: function decrement(id) {
     var _this8 = this;
 
-    axios.get('/api/decrement/' + id).then(function () {
+    axios.get('https://inventorymanagements.herokuapp.com/api/decrement/' + id).then(function () {
       Reload.$emit('AfterAdd');
     })["catch"](function (error) {
       return _this8.errors = error.response.data.errors;
@@ -4530,7 +4530,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   vat: function vat() {
     var _this9 = this;
 
-    axios.get('/api/vats/').then(function (_ref2) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/vats/').then(function (_ref2) {
       var data = _ref2.data;
       return _this9.vats = data;
     })["catch"](function (error) {
@@ -4551,7 +4551,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       vat: this.vats.vat,
       total: total
     };
-    axios.post('/api/orderdone/', data).then(function () {
+    axios.post('https://inventorymanagements.herokuapp.com/api/orderdone/', data).then(function () {
       Notification.success();
 
       _this10.$router.push({
@@ -4565,7 +4565,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   allProduct: function allProduct() {
     var _this11 = this;
 
-    axios.get('/api/product').then(function (_ref3) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/product').then(function (_ref3) {
       var data = _ref3.data;
       return _this11.products = data;
     })["catch"](function (error) {
@@ -4575,7 +4575,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   allCategory: function allCategory() {
     var _this12 = this;
 
-    axios.get('/api/category').then(function (_ref4) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/category').then(function (_ref4) {
       var data = _ref4.data;
       return _this12.categories = data;
     })["catch"](function (error) {
@@ -4585,7 +4585,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   allCustomer: function allCustomer() {
     var _this13 = this;
 
-    axios.get('/api/customer').then(function (_ref5) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/customer').then(function (_ref5) {
       var data = _ref5.data;
       return _this13.customers = data;
     })["catch"](function (error) {
@@ -4595,7 +4595,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   subProduct: function subProduct(id) {
     var _this14 = this;
 
-    axios.get('/api/getting/product/' + id).then(function (_ref6) {
+    axios.get('https://inventorymanagements.herokuapp.com/api/getting/product/' + id).then(function (_ref6) {
       var data = _ref6.data;
       return _this14.getproducts = data;
     })["catch"](function (error) {
@@ -4767,7 +4767,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     save: function save() {
       var _this2 = this;
 
-      axios.post('/api/product', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/product', this.form).then(function () {
         _this2.$router.push({
           name: 'product'
         });
@@ -4781,11 +4781,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }, "created", function created() {
   var _this3 = this;
 
-  axios.get('/api/category').then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/category').then(function (_ref) {
     var data = _ref.data;
     return _this3.categories = data;
   })["catch"]();
-  axios.get('/api/supplier').then(function (_ref2) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/supplier').then(function (_ref2) {
     var data = _ref2.data;
     return _this3.Suppliers = data;
   })["catch"]();
@@ -4929,15 +4929,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/product/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/product/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
-  axios.get('/api/category').then(function (_ref2) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/category').then(function (_ref2) {
     var data = _ref2.data;
     return _this.categories = data;
   })["catch"]();
-  axios.get('/api/supplier').then(function (_ref3) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/supplier').then(function (_ref3) {
     var data = _ref3.data;
     return _this.Suppliers = data;
   })["catch"]();
@@ -4964,7 +4964,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this3 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/product/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/product/' + id, this.form).then(function () {
       _this3.$router.push({
         name: 'product'
       });
@@ -5077,7 +5077,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allProduct: function allProduct() {
       var _this2 = this;
 
-      axios.get('/api/product').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/product').then(function (_ref) {
         var data = _ref.data;
         return _this2.products = data;
       })["catch"]();
@@ -5095,7 +5095,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/product/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/product/' + id).then(function () {
             _this3.products = _this3.products.filter(function (product) {
               return product.id != id;
             });
@@ -5190,7 +5190,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/product/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/product/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -5199,7 +5199,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this2 = this;
 
     var id = this.$route.params.id;
-    axios.post('/api/stock/update/' + id, this.form).then(function () {
+    axios.post('https://inventorymanagements.herokuapp.com/api/stock/update/' + id, this.form).then(function () {
       _this2.$router.push({
         name: 'stock'
       });
@@ -5317,7 +5317,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allProduct: function allProduct() {
       var _this2 = this;
 
-      axios.get('/api/product').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/product').then(function (_ref) {
         var data = _ref.data;
         return _this2.products = data;
       })["catch"]();
@@ -5426,7 +5426,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allEmployee: function allEmployee() {
       var _this2 = this;
 
-      axios.get('/api/employee').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/employee').then(function (_ref) {
         var data = _ref.data;
         return _this2.employees = data;
       })["catch"]();
@@ -5546,7 +5546,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/employee/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/employee/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -5555,7 +5555,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this2 = this;
 
     var id = this.$route.params.id;
-    axios.post('/api/salary/paid/' + id, this.form).then(function () {
+    axios.post('https://inventorymanagements.herokuapp.com/api/salary/paid/' + id, this.form).then(function () {
       _this2.$router.push({
         name: 'given-salary'
       });
@@ -5678,7 +5678,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/edit/salary/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/edit/salary/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -5687,7 +5687,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this2 = this;
 
     var id = this.$route.params.id;
-    axios.post('/api/salary/update/' + id, this.form).then(function () {
+    axios.post('https://inventorymanagements.herokuapp.com/api/salary/update/' + id, this.form).then(function () {
       _this2.$router.push({
         name: 'salary'
       });
@@ -5791,7 +5791,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allsalaries: function allsalaries() {
       var _this2 = this;
 
-      axios.get('/api/salary').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/salary').then(function (_ref) {
         var data = _ref.data;
         return _this2.salaries = data;
       })["catch"]();
@@ -5900,7 +5900,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       var id = this.$route.params.id;
-      axios.get('/api/salary/view/' + id).then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/salary/view/' + id).then(function (_ref) {
         var data = _ref.data;
         return _this2.salaries = data;
       })["catch"](function (error) {
@@ -6040,7 +6040,7 @@ __webpack_require__.r(__webpack_exports__);
     save: function save() {
       var _this2 = this;
 
-      axios.post('/api/supplier', this.form).then(function () {
+      axios.post('https://inventorymanagements.herokuapp.com/api/supplier', this.form).then(function () {
         _this2.$router.push({
           name: 'supplier'
         });
@@ -6166,7 +6166,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var _this = this;
 
   var id = this.$route.params.id;
-  axios.get('/api/supplier/' + id).then(function (_ref) {
+  axios.get('https://inventorymanagements.herokuapp.com/api/supplier/' + id).then(function (_ref) {
     var data = _ref.data;
     return _this.form = data;
   })["catch"](console.log('error'));
@@ -6193,7 +6193,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var _this3 = this;
 
     var id = this.$route.params.id;
-    axios.patch('/api/supplier/' + id, this.form).then(function () {
+    axios.patch('https://inventorymanagements.herokuapp.com/api/supplier/' + id, this.form).then(function () {
       _this3.$router.push({
         name: 'supplier'
       });
@@ -6304,7 +6304,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     allSupplier: function allSupplier() {
       var _this2 = this;
 
-      axios.get('/api/supplier').then(function (_ref) {
+      axios.get('https://inventorymanagements.herokuapp.com/api/supplier').then(function (_ref) {
         var data = _ref.data;
         return _this2.Suppliers = data;
       })["catch"]();
@@ -6322,7 +6322,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
         if (result.value) {
-          axios["delete"]('/api/supplier/' + id).then(function () {
+          axios["delete"]('https://inventorymanagements.herokuapp.com/api/supplier/' + id).then(function () {
             _this3.Suppliers = _this3.Suppliers.filter(function (Supplier) {
               return Supplier.id != id;
             });

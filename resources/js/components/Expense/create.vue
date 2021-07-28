@@ -70,7 +70,7 @@ export default {
 	methods: {
         save(){
 						
-		    axios.post('/api/expense',this.form)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/expense',this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'expense'})

@@ -70,7 +70,7 @@ export default {
 	},
 	methods: {
 		allsalaries(){
-			axios.get('/api/salary')
+			axios.get('https://inventorymanagements.herokuapp.com/api/salary')
 			 .then(({data})=>(this.salaries=data))		
 			.catch()
 		}

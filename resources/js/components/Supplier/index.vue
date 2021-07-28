@@ -77,7 +77,7 @@ export default {
 	},
 	methods: {
 		allSupplier(){
-			axios.get('/api/supplier')
+			axios.get('https://inventorymanagements.herokuapp.com/api/supplier')
 			 .then(({data})=>(this.Suppliers=data))		
 			.catch()
 		},
@@ -93,7 +93,7 @@ export default {
 			confirmButtonText: 'Yes, delete it!'
 			}).then((result) => {
 			if (result.value) {
-				axios.delete('/api/supplier/'+id)
+				axios.delete('https://inventorymanagements.herokuapp.com/api/supplier/'+id)
 				.then(()=>{
 					this.Suppliers=this.Suppliers.filter(Supplier=>{
 						return Supplier.id != id

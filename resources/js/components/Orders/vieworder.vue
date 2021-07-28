@@ -112,11 +112,11 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/order/details/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/order/details/'+id)
         .then(({data})=>(this.orders=data))
         .catch(console.log('error'))     
        
-        axios.get('/api/order/orderdetails/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/order/orderdetails/'+id)
         .then(({data})=>(this.details=data))
         .catch(console.log('error'))
 

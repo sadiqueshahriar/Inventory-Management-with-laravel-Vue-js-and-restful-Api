@@ -233,7 +233,7 @@ export default {
 	methods: {
 		//add to card start
 		AddToCart(id){
-		axios.get('/api/addToCart/'+id)
+		axios.get('https://inventorymanagements.herokuapp.com/api/addToCart/'+id)
 			 .then(()=>{
 				 Reload.$emit('AfterAdd');
 				 Notification.cart_success()
@@ -242,12 +242,12 @@ export default {
 
 		},
 		cartproduct(){
-			axios.get('/api/cart/product/')
+			axios.get('https://inventorymanagements.herokuapp.com/api/cart/product/')
 			 .then(({data})=>(this.carts=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		removeItems(id){
-			axios.get('/api/remove/cart/'+id)
+			axios.get('https://inventorymanagements.herokuapp.com/api/remove/cart/'+id)
 			 .then(()=>{
 				 Reload.$emit('AfterAdd');
 				 Notification.cart_delete()
@@ -255,21 +255,21 @@ export default {
 			.catch(error=>this.errors=error.response.data.errors)			
 		},
 		increment(id){
-		axios.get('/api/increment/'+id)
+		axios.get('https://inventorymanagements.herokuapp.com/api/increment/'+id)
 			 .then(()=>{
 				 Reload.$emit('AfterAdd');
 			 })		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		decrement(id){
-		axios.get('/api/decrement/'+id)
+		axios.get('https://inventorymanagements.herokuapp.com/api/decrement/'+id)
 			 .then(()=>{
 				 Reload.$emit('AfterAdd');
 			 })		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		vat(){
-			axios.get('/api/vats/')
+			axios.get('https://inventorymanagements.herokuapp.com/api/vats/')
 			 .then(({data})=>(this.vats=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
@@ -277,7 +277,7 @@ export default {
 			let total=this.subtotal*this.vats.vat/100 +this.subtotal;
 			var data={qty:this.qty,subtotal:this.subtotal,customer_id:this.customer_id,pay:this.pay,due:this.due,payby:this.payby,vat:this.vats.vat,total:total}
 
-			 axios.post('/api/orderdone/',data)
+			 axios.post('https://inventorymanagements.herokuapp.com/api/orderdone/',data)
 			.then(()=>{					 
              Notification.success()
 			this.$router.push({name:'home'})
@@ -288,22 +288,22 @@ export default {
 
 		//add to card end
 		allProduct(){
-			axios.get('/api/product')
+			axios.get('https://inventorymanagements.herokuapp.com/api/product')
 			 .then(({data})=>(this.products=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		allCategory(){
-			axios.get('/api/category')
+			axios.get('https://inventorymanagements.herokuapp.com/api/category')
 			 .then(({data})=>(this.categories=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		allCustomer(){
-			axios.get('/api/customer')
+			axios.get('https://inventorymanagements.herokuapp.com/api/customer')
 			 .then(({data})=>(this.customers=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		},
 		subProduct(id){
-			axios.get('/api/getting/product/'+id)
+			axios.get('https://inventorymanagements.herokuapp.com/api/getting/product/'+id)
 			 .then(({data})=>(this.getproducts=data))		
 			.catch(error=>this.errors=error.response.data.errors)
 		}              

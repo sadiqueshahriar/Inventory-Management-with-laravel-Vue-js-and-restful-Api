@@ -77,7 +77,7 @@ export default {
 	},
 	methods: {
 		allCustomer(){
-			axios.get('/api/customer')
+			axios.get('https://inventorymanagements.herokuapp.com/api/customer')
 			 .then(({data})=>(this.customers=data))		
 			.catch()
 		},
@@ -93,7 +93,7 @@ export default {
 			confirmButtonText: 'Yes, delete it!'
 			}).then((result) => {
 			if (result.value) {
-				axios.delete('/api/customer/'+id)
+				axios.delete('https://inventorymanagements.herokuapp.com/api/customer/'+id)
 				.then(()=>{
 					this.customers=this.customers.filter(customer=>{
 						return customer.id != id

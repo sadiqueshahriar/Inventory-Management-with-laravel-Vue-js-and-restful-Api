@@ -95,14 +95,14 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/edit/salary/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/edit/salary/'+id)
         .then(({data})=>(this.form=data))
         .catch(console.log('error'))
     },	
 	methods: {
         salaryUpdate(){
 			 let id=this.$route.params.id			
-		    axios.post('/api/salary/update/'+id,this.form)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/salary/update/'+id,this.form)
 			.then(()=>{			
 			 this.$router.push({name:'salary'})
              Notification.success()

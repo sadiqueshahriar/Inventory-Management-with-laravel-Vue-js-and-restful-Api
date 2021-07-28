@@ -79,7 +79,7 @@ export default {
 	},
 	methods: {
 		allProduct(){
-			axios.get('/api/product')
+			axios.get('https://inventorymanagements.herokuapp.com/api/product')
 			 .then(({data})=>(this.products=data))		
 			.catch()
 		},
@@ -95,7 +95,7 @@ export default {
 			confirmButtonText: 'Yes, delete it!'
 			}).then((result) => {
 			if (result.value) {
-				axios.delete('/api/product/'+id)
+				axios.delete('https://inventorymanagements.herokuapp.com/api/product/'+id)
 				.then(()=>{
 					this.products=this.products.filter(product=>{
 						return product.id != id

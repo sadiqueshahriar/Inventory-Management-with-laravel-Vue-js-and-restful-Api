@@ -74,7 +74,7 @@ export default {
 	},
 	methods: {
 		allExpense(){
-			axios.get('/api/expense')
+			axios.get('https://inventorymanagements.herokuapp.com/api/expense')
 			 .then(({data})=>(this.expenses=data))		
 			.catch()
 		},
@@ -90,7 +90,7 @@ export default {
 			confirmButtonText: 'Yes, delete it!'
 			}).then((result) => {
 			if (result.value) {
-				axios.delete('/api/expense/'+id)
+				axios.delete('https://inventorymanagements.herokuapp.com/api/expense/'+id)
 				.then(()=>{
 					this.expenses=this.expenses.filter(expense=>{
 						return expense.id != id

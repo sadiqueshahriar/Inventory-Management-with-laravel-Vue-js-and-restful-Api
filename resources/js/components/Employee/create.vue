@@ -123,7 +123,7 @@ export default {
         },
         save(){
 						
-		    axios.post('/api/employee',this.form)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/employee',this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'employee'})

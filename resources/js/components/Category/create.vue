@@ -64,7 +64,7 @@ export default {
 	methods: {
         save(){
 						
-		    axios.post('/api/category',this.form)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/category',this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'category'})

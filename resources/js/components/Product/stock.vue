@@ -84,7 +84,7 @@ export default {
 	},
 	methods: {
 		allProduct(){
-			axios.get('/api/product')
+			axios.get('https://inventorymanagements.herokuapp.com/api/product')
 			 .then(({data})=>(this.products=data))		
 			.catch()
 		}

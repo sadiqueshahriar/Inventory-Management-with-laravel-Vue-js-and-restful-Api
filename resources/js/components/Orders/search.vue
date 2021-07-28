@@ -92,7 +92,7 @@ export default {
 	methods: {
         save(){
 			var data={date:this.date}			
-		    axios.post('/api/search/order/',data)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/search/order/',data)
             .then(({data})=>(this.orders=data))
 			.catch(error=>this.errors=error.response.data.errors)
 

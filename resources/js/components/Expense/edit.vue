@@ -67,7 +67,7 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/expense/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/expense/'+id)
         .then(({data})=>(this.form=data))
         .catch(console.log('error'))
     },	
@@ -75,7 +75,7 @@ export default {
 
         expenseUpdate(){
 			 let id=this.$route.params.id			
-		    axios.patch('/api/expense/'+id,this.form)
+		    axios.patch('https://inventorymanagements.herokuapp.com/api/expense/'+id,this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'expense'})

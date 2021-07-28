@@ -77,7 +77,7 @@ export default {
 	},
 	methods: {
 		allEmployee(){
-			axios.get('/api/employee')
+			axios.get('https://inventorymanagements.herokuapp.com/api/employee')
 			 .then(({data})=>(this.employees=data))		
 			.catch()
 		}

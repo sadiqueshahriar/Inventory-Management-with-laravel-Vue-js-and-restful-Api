@@ -77,7 +77,7 @@ export default {
 	},
 	methods: {
 		allEmployee(){
-			axios.get('/api/employee')
+			axios.get('https://inventorymanagements.herokuapp.com/api/employee')
 			 .then(({data})=>(this.employees=data))		
 			.catch()
 		},
@@ -93,7 +93,7 @@ export default {
 			confirmButtonText: 'Yes, delete it!'
 			}).then((result) => {
 			if (result.value) {
-				axios.delete('/api/employee/'+id)
+				axios.delete('https://inventorymanagements.herokuapp.com/api/employee/'+id)
 				.then(()=>{
 					this.employees=this.employees.filter(employee=>{
 						return employee.id != id

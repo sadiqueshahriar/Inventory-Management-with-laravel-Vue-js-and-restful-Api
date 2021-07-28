@@ -96,7 +96,7 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/supplier/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/supplier/'+id)
         .then(({data})=>(this.form=data))
         .catch(console.log('error'))
     },	
@@ -117,7 +117,7 @@ export default {
         },
         supplierUpdate(){
 			 let id=this.$route.params.id			
-		    axios.patch('/api/supplier/'+id,this.form)
+		    axios.patch('https://inventorymanagements.herokuapp.com/api/supplier/'+id,this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'supplier'})

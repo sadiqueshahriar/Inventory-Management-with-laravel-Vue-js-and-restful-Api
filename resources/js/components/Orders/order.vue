@@ -67,7 +67,7 @@ export default {
 	},
 	methods: {
 		allOrder(){
-			axios.get('/api/orders')
+			axios.get('https://inventorymanagements.herokuapp.com/api/orders')
 			 .then(({data})=>(this.orders=data))		
 			.catch()
 		},

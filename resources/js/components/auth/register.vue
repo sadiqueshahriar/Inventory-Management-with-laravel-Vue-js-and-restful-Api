@@ -99,7 +99,7 @@ export default{
 	},
 	methods: {
 		signup(){
-			axios.post('api/auth/signup',this.form)
+			axios.post('https://inventorymanagements.herokuapp.com/api/auth/signup',this.form)
 			.then(res=>{
 			User.responseAfterLogin(res)
 				Toast.fire({

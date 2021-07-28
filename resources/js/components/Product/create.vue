@@ -147,7 +147,7 @@ export default {
         },
         save(){
 						
-		    axios.post('/api/product',this.form)
+		    axios.post('https://inventorymanagements.herokuapp.com/api/product',this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'product'})
@@ -160,11 +160,11 @@ export default {
 		
 	},
     created(){
-        axios.get('/api/category')
+        axios.get('https://inventorymanagements.herokuapp.com/api/category')
 			 .then(({data})=>(this.categories=data))		
 			.catch()
 
-        axios.get('/api/supplier')
+        axios.get('https://inventorymanagements.herokuapp.com/api/supplier')
 			 .then(({data})=>(this.Suppliers=data))		
 			 .catch()
 

@@ -132,31 +132,31 @@ export default{
 	},
 	methods: {
 		todaySell(){
-			axios.get('/api/today/sell/')
+			axios.get('https://inventorymanagements.herokuapp.com/api/today/sell/')
             .then(({data})=>(this.todaysell=data))
 			.catch(error=>this.errors=error.response.data.errors)
 
 		},
 		todayincome(){
-		axios.get('/api/today/income/')
+		axios.get('https://inventorymanagements.herokuapp.com/api/today/income/')
 		.then(({data})=>(this.income=data))
 		.catch(error=>this.errors=error.response.data.errors)
 
 		},
 		todaydue(){
-		axios.get('/api/today/due/')
+		axios.get('https://inventorymanagements.herokuapp.com/api/today/due/')
 		.then(({data})=>(this.due=data))
 		.catch(error=>this.errors=error.response.data.errors)
 
 		},
 		todayexpense(){
-		axios.get('/api/today/expense/')
+		axios.get('https://inventorymanagements.herokuapp.com/api/today/expense/')
 		.then(({data})=>(this.expense=data))
 		.catch(error=>this.errors=error.response.data.errors)
 
 		},
 		stockOut(){
-		axios.get('/api/today/stockout/')
+		axios.get('https://inventorymanagements.herokuapp.com/api/today/stockout/')
 		.then(({data})=>(this.products=data))
 		.catch(error=>this.errors=error.response.data.errors)
 

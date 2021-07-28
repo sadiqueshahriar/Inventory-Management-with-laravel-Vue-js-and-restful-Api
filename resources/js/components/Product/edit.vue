@@ -121,15 +121,15 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/product/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/product/'+id)
         .then(({data})=>(this.form=data))
         .catch(console.log('error'))
 
-         axios.get('/api/category')
+         axios.get('https://inventorymanagements.herokuapp.com/api/category')
 			 .then(({data})=>(this.categories=data))		
 			.catch()
 
-        axios.get('/api/supplier')
+        axios.get('https://inventorymanagements.herokuapp.com/api/supplier')
 			 .then(({data})=>(this.Suppliers=data))		
 			 .catch()
     },	
@@ -150,7 +150,7 @@ export default {
         },
         productUpdate(){
 			 let id=this.$route.params.id			
-		    axios.patch('/api/product/'+id,this.form)
+		    axios.patch('https://inventorymanagements.herokuapp.com/api/product/'+id,this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'product'})

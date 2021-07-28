@@ -106,7 +106,7 @@ export default {
 	},
     created(){
         let id=this.$route.params.id
-        axios.get('/api/employee/'+id)
+        axios.get('https://inventorymanagements.herokuapp.com/api/employee/'+id)
         .then(({data})=>(this.form=data))
         .catch(console.log('error'))
     },	
@@ -127,7 +127,7 @@ export default {
         },
         employeeUpdate(){
 			 let id=this.$route.params.id			
-		    axios.patch('/api/employee/'+id,this.form)
+		    axios.patch('https://inventorymanagements.herokuapp.com/api/employee/'+id,this.form)
 			.then(()=>{
 			
 			 this.$router.push({name:'employee'})
